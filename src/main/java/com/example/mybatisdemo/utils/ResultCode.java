@@ -22,4 +22,12 @@ public enum ResultCode {
   public String getMsg() {
     return msg;
   }
+
+//  @Override
+//  public String toString() {
+//    return "ResultCode{" +
+//      "code=" + code +
+//      ", msg='" + msg + '\'' +
+//      '}';
+//  }
 }

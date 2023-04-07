@@ -3,11 +3,8 @@ package com.example.mybatisdemo.utils;
 import java.io.Serializable;
 
 public class Result<T> implements Serializable {
-  // 自定义状态码
   private Integer code;
-  // 提示内容，如果接口出错，则存放异常信息
   private String msg;
-  // 返回数据体
   private T data;
   // 接口成功检测。拓展字段，前台可用该接口判断接口是否正常，或者通过code状态码
   private boolean success;
@@ -50,13 +47,38 @@ public class Result<T> implements Serializable {
     return this.code == ResultCode.SUCCESS.getCode();
   }
 
+  public Integer getCode() {
+    return code;
+  }
+
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public String getMsg() {
+    return msg;
+  }
+
+  public void setMsg(String msg) {
+    this.msg = msg;
+  }
+
+  public T getData() {
+    return data;
+  }
+
+  public void setData(T data) {
+    this.data = data;
+  }
+
   public void setSuccess(boolean success) {
     this.success = success;
   }
 
   @Override
   public String toString() {
-    return "Result{" + "code=" + code +
+    return "Result{" +
+      "code=" + code +
       ", msg='" + msg + '\'' +
       ", data=" + data +
       ", success=" + success +
